@@ -22,6 +22,9 @@ public class LearningPath {
     @ManyToOne
     @JoinColumn(name = "employeeId")
     private Employee employee;
+    @ManyToOne
+    @JoinColumn(name = "mentorId")
+    private Employee mentor;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }

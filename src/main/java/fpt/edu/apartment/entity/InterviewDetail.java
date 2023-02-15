@@ -19,6 +19,9 @@ public class InterviewDetail {
     private Long id;
     private LocalDateTime updatedDate;
     private String description;
+    @OneToOne //ko bik quan he la 1-1 hay nhiu`-1
+    @JoinColumn(name = "interviewId")
+    private Interview interview;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }

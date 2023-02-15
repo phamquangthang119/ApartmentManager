@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -20,6 +21,8 @@ public class Contract {
     private Float workingHours;
     private Float baseWage;
     private String currencyUnit;
+    private LocalDateTime signDate;
+    private LocalDateTime startDate;
     @OneToOne
     @JoinColumn(name = "positionId")
     private Position position;

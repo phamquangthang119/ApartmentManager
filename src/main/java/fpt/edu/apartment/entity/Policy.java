@@ -21,6 +21,9 @@ public class Policy {
     private Float amount;
     private String unit;
     private String type;
+    @ManyToOne
+    @JoinColumn(name = "accountId")
+    private Account account;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }

@@ -20,12 +20,12 @@ public class Wage {
     private String description;
     private Float amount;
     private String type;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "contractId")
-    private Contract contract;
+    private Employee contract;
     @ManyToOne
     @JoinColumn(name = "approverId")
-    private Employee employee;
+    private Employee approver;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 

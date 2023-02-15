@@ -1,5 +1,6 @@
 package fpt.edu.apartment.entity;
 
+import fpt.edu.apartment.enums.EnumActive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,4 +26,6 @@ public class Cerfiticate {
     @ManyToOne
     @JoinColumn(name = "employeeId")
     private Employee employee;
+    @Enumerated(EnumType.STRING)
+    private EnumActive status;
 }

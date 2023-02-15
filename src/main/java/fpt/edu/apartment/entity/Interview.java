@@ -22,8 +22,8 @@ public class Interview {
     @JoinColumn(name = "applicationId")
     private Application application;
     @ManyToOne
-    @JoinColumn(name = "approverId")
-    private Employee employee;
+    @JoinColumn(name = "managerId")
+    private Employee manager;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }

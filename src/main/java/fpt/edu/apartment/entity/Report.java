@@ -22,6 +22,9 @@ public class Report {
     private String imgUrl;
     private Date initiatedDate;
     private Date terminatedDate;
+    @ManyToOne
+    @JoinColumn(name = "employeeId")
+    private Employee employee;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }

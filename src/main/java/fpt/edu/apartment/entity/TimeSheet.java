@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -16,13 +17,15 @@ public class TimeSheet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String description;
-    private Float amount;
-    private String type;
+    private LocalDateTime timeIn;
+    private LocalDateTime timeOut;
+    private String room;
     @ManyToOne
-    @JoinColumn(name = "Employee")
+    @JoinColumn(name = "employeeId")
     private Employee employe;
+    @ManyToOne
+    @JoinColumn(name = "apartmentId")
+    private Employee apartment;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }

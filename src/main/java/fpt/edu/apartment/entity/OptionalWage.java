@@ -4,6 +4,7 @@ import fpt.edu.apartment.enums.EnumActive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.utility.nullability.MaybeNull;
 
 import javax.persistence.*;
 
@@ -20,7 +21,15 @@ public class OptionalWage {
     private String description;
     private Float amount;
     private String type;
-    private String jobType;
+    @ManyToOne
+    @JoinColumn(name = "employeeId")
+    private Employee employee;
+    @ManyToOne
+    @JoinColumn(name = "approverId")
+    private Employee approver;
+    @ManyToOne
+    @JoinColumn(name = "policyId")
+    private Policy policy;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }
