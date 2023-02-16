@@ -6,20 +6,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Time;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Department")
-public class Department {
+@Table(name = "WorkingSchedule")
+public class WorkingSchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    @ManyToOne
-    @JoinColumn(name = "apartmentId")
-    private Apartment apartment;
+    private Date workDate;
+    private Time begin;
+    private Time end;
+    private String type;
+    @OneToOne
+    @JoinColumn(name = "contractId")
+    private Contract contract;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }
