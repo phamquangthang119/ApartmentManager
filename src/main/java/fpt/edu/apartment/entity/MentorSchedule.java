@@ -20,7 +20,7 @@ public class MentorSchedule {
     private String note;
     private String type;
     private LocalDateTime classDate;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "learningPathId")
     private LearningPath learningPath;
     @ManyToOne

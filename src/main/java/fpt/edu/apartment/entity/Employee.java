@@ -23,9 +23,6 @@ public class Employee {
     private String avatarUrl;
     private Date dateOfBirth;
     private String identificationId;
-    @OneToOne
-    @JoinColumn(name = "contractId")
-    private Contract contract;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }
