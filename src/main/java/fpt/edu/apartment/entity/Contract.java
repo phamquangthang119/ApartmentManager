@@ -23,9 +23,12 @@ public class Contract {
     private String currencyUnit;
     private LocalDateTime signDate;
     private LocalDateTime startDate;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "positionId")
     private Position position;
+    @OneToOne
+    @JoinColumn(name = "employeeId")
+    private Employee employee;
     @Enumerated(EnumType.STRING)
     private EnumActive status;
 }
